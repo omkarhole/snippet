@@ -1,24 +1,16 @@
+"use client"
+
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { Label } from "@radix-ui/react-label";
 import { prisma } from "@/lib/prisma";
 import { Button } from "@/components/ui/button";
 import { redirect } from "next/navigation";
+import { createSnippet } from "@/actions";
+import { useActionState } from "react";
+import * as actions from "@/actions";
 function CreateSnippetpage() {
-    async  function createSnippet(formData:FormData){
-        "use server" // use server directive
-         const title=formData.get("title")as string;
-         const code=formData.get("code")as string;
-         
-         const snippet=await  prisma.snippets.create({
-            data:{
-                title,
-                code 
-            }
-         });
-         console.log("created snippet",snippet);
-         redirect("/");
-    }
+  const [formStateData, createSnippet]=useActionState(actions.createSnippet,{message:""});
     return ( 
         <form action={createSnippet}>
        <div>    
@@ -29,7 +21,8 @@ function CreateSnippetpage() {
       <Label>Code</Label>
             <Textarea name="code" id="code"/>
         </div>
-        <Button type="submit" className="my-4 ">New</Button>
+        { formStateData.message && <div className="p-2 bg-red-600 border-2">{formStateData.message}</div>}
+               <Button type="submit" className="my-4 ">New</Button>
         </form>
         
      );
