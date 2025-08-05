@@ -41,3 +41,12 @@ const snippetDetailPage = async ({ params }: { params: Promise<{ id: string }> }
 }
 
 export default snippetDetailPage;
+
+
+//to set dynamic route to static route
+export const generateStaticParams=async()=>{
+const snippets=await prisma.snippets.findMany();
+return snippets.map((snippet)=>{
+    return {id:snippet.id.toString()};
+})
+}

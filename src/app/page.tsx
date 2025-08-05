@@ -2,6 +2,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/prisma";
+
+
+// export const  dynamic ="force-dynamic";//disabled caching feature->dynamic route
+// export const revalidate=0; 
+
 export default async  function Home() {
 
   const snippets=await prisma.snippets.findMany();
