@@ -4,8 +4,8 @@ A modern, full-stack code snippet management application built with Next.js, all
 
 ## ✨ Features
 
-- **Create Snippets**: Add new code snippets with syntax highlighting
-- **Edit & Update**: Modify existing snippets seamlessly 
+- **Create Snippets**: Add new code snippets with syntax highlighting.
+- **Edit & Update**: Modify existing snippets seamlessly.
 - **View Snippets**: Browse and search through your snippet collection
 - **Responsive Design**: Modern UI built with Tailwind CSS and shadcn/ui components
 - **Database Integration**: Persistent storage using Prisma ORM
