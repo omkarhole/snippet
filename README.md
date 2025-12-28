@@ -9,7 +9,7 @@ A modern, full-stack code snippet management application built with Next.js, all
 - **View Snippets**: Browse and search through your snippet collection
 - **Responsive Design**: Modern UI built with Tailwind CSS and shadcn/ui components
 - **Database Integration**: Persistent storage using Prisma ORM
-- **Type-Safe**: Full TypeScript support throughout the application
+- **Type-Safe**: Full TypeScript support throughout the application 
 
 ## 🛠️ Tech Stack
 
